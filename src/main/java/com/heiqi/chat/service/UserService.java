@@ -1,7 +1,10 @@
 package com.heiqi.chat.service;
 
+import com.heiqi.chat.entity.Metrics;
 import com.heiqi.chat.entity.User;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.List;
 
 
 public interface UserService  {
@@ -9,6 +12,7 @@ public interface UserService  {
     User getUserByName(String UserName);
     User getUserByAge( int Age);
     User getUserByAddress(String Address);
+    public List<Metrics> getUserMatch(int UserId);
     int insertUser(User user);
     int deleteUser( int UserId);
     int updateUserName( int UserId,String UserName);
@@ -17,4 +21,6 @@ public interface UserService  {
     int updateUserIdentity( int UserId, String Identity);
     int updateUserEducation( int UserId, int Education);
     int updateUserPhoto(int UserId, String Photo);
+
+
 }

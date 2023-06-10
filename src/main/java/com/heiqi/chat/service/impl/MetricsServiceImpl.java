@@ -38,4 +38,9 @@ public class MetricsServiceImpl implements MetricsService {
     public int deleteByMetricID(int MetricID) {
         return metricsMapper.deleteByMetricID(MetricID);
     }
+
+    @Override
+    public int insertScoRel(int MetricID, int ScoRel) {
+       return metricsMapper.insertScoRel(MetricID,ScoRel);
+    }
 }

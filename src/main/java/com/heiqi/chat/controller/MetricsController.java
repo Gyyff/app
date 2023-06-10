@@ -29,7 +29,9 @@ public class MetricsController {
 
     @PostMapping("/insertMetrics")
     public void insertMetrics(@RequestBody Metrics metrics) {
+
         metricsService.insertMetrics(metrics);
+        metricsService.insertScoRel(metrics.getMetricID(),metrics.getOpenness()+metrics.getCuriosity()+metrics.getAbstraction()+metrics.getIntellect());
     }
 
     @DeleteMapping("deleteByUserID/{UserId}")

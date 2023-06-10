@@ -16,4 +16,6 @@ public interface MetricsService {
     int deleteByUserID(int UserID);
 
     int deleteByMetricID(int MetricID);
+
+    int insertScoRel(int MetricID,int ScoRel);
 }

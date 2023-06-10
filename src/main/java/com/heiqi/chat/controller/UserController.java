@@ -1,9 +1,12 @@
 package com.heiqi.chat.controller;
 
+import com.heiqi.chat.entity.Metrics;
 import com.heiqi.chat.entity.User;
 import com.heiqi.chat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")
@@ -33,6 +36,10 @@ public class UserController {
     @GetMapping("/getUserByAddress/{Address}")
     public User getUserByAddress(@PathVariable("Address") String Address) {
         return userService.getUserByAddress(Address);
+    }
+    @GetMapping("/getUserMatch/{UserId}")
+    public List<Metrics> getUserMatch(@PathVariable("UserId") int UserId){
+        return userService.getUserMatch(UserId);
     }
 
     // 这里写更多的 getter 函数...

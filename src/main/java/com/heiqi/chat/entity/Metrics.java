@@ -2,14 +2,16 @@ package com.heiqi.chat.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
+@ToString
 @Getter
 @Setter
 public class Metrics {
     private int MetricID;
     private int UserID;
     private String MBTI;
-    private int Principle; //道德原则 原则
+    private int Principle; //是否认同美国制度
     private int Knowledge;  //学历
     private int Openness;  // 开放性
     private int Curiosity;  // 好奇心和求知欲
@@ -22,4 +24,5 @@ public class Metrics {
     private int ChineseMed;  // 是否相信中医
     private int Star;  // 是否相信星座
     private int FS;  // 是否相信风水
+    private int ScoRel=Openness+Curiosity+Abstraction+Intellect;//总得分
 }
