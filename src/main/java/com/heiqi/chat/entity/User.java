@@ -17,6 +17,6 @@ public class User {
     private int Height;
     private int Education;
     private int Sex;
-
+    private int Beauty;
 
 }

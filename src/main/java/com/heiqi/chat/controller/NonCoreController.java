@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-    @RequestMapping("/api/user/nonCore")
+@RequestMapping("/api/user/nonCore")
 public class NonCoreController {
     private final NonCoreService nonCoreService;
 
@@ -19,23 +19,24 @@ public class NonCoreController {
     }
 
     @GetMapping("/getNonCoreByNonCoreID/{NonCoreID}")
-    public NonCore getNonCoreByNonCoreID(@PathVariable("NonCoreID") int NonCoreID){
+    public NonCore getNonCoreByNonCoreID(@PathVariable("NonCoreID") int NonCoreID) {
         return nonCoreService.getNonCoreByNonCoreID(NonCoreID);
     }
 
     @GetMapping("/getNonCoreByUserID/{UserID}")
-    public NonCore getNonCoreByUserID(@PathVariable("UserID") int UserID){
+    public NonCore getNonCoreByUserID(@PathVariable("UserID") int UserID) {
         return nonCoreService.getNonCoreByUserID(UserID);
     }
+
     //这里是**灵魂伴侣**的匹配接口！！！
     @GetMapping("/getSoulFriend/{UserID}")
-    public List<NonCore> getSoulFriend(@PathVariable("UserID") int UserID){
+    public List<NonCore> getSoulFriend(@PathVariable("UserID") int UserID) {
         return nonCoreService.getSoulFriend(UserID);
     }
 
 
     @PostMapping("/insertNonCore")
-    public void insertNonCore(@RequestBody NonCore nonCore){
+    public void insertNonCore(@RequestBody NonCore nonCore) {
         nonCoreService.insertNonCoreText(nonCore);
 
     }
@@ -49,7 +50,6 @@ public class NonCoreController {
     public void deleteByNonCoreID(@PathVariable("NonCoreID") int NonCoreID) {
         nonCoreService.deleteNonCoreByNonCoreID(NonCoreID);
     }
-
 
 
 }

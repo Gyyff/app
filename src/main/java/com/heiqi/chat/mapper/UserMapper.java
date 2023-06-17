@@ -19,7 +19,7 @@ public interface UserMapper {
     @Select("SELECT * FROM user WHERE Address = #{Address}")
     User getUserByAddress(@Param("Address") String Address);
 
-    @Insert("INSERT INTO user(UserId, UserName, PassWord, Photo, Identity, Gender, Age, Address, Height, Education, Sex) VALUES(#{UserId}, #{UserName}, #{PassWord}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex})")
+    @Insert("INSERT INTO user(UserId, UserName, PassWord, Photo, Identity, Gender, Age, Address, Height, Education, Sex,Beauty) VALUES(#{UserId}, #{UserName}, #{PassWord}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex},#{Beauty})")
     @Options(useGeneratedKeys = true, keyProperty = "UserId")
     int insertUser(User user);
 

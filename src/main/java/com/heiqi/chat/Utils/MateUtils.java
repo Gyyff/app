@@ -185,5 +185,16 @@ public class MateUtils{
 
 
     }
+    public  double cosineSimilarity(int[] data1, int[] data2) {
+        double dotProduct = 0.0;
+        double normA = 0.0;
+        double normB = 0.0;
+        for (int i = 0; i < data1.length; i++) {
+            dotProduct += data1[i] * data2[i];
+            normA += Math.pow(data1[i], 2);
+            normB += Math.pow(data2[i], 2);
+        }
+        return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+    }
 
 }
