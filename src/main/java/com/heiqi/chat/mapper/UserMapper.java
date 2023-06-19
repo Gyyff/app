@@ -19,7 +19,16 @@ public interface UserMapper {
     @Select("SELECT * FROM user WHERE Address = #{Address}")
     User getUserByAddress(@Param("Address") String Address);
 
-    @Insert("INSERT INTO user(UserId, UserName, PassWord, Photo, Identity, Gender, Age, Address, Height, Education, Sex,Beauty) VALUES(#{UserId}, #{UserName}, #{PassWord}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex},#{Beauty})")
+    @Select("SELECT CharaPro FROM user WHERE UserId = #{UserId}")
+    int getUserCharaPro(@Param("UserId") int UserId);
+
+    @Select("SELECT InfoPro FROM user WHERE UserId = #{UserId}")
+    int getUserInfoPro(@Param("UserId") int UserId);
+
+    @Select("SELECT MatchPro FROM user WHERE UserId = #{UserId}")
+    int getUserMatchPro(@Param("UserId") int UserId);
+
+    @Insert("INSERT INTO user(UserId, UserName, PassWord, Photo, Identity, Gender, Age, Address, Height, Education, Sex,Beauty,CharaPro,InfoPro,MatchPro) VALUES(#{UserId}, #{UserName}, #{PassWord}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex},#{Beauty},#{CharaPro},#{InfoPro},#{MatchPro})")
     @Options(useGeneratedKeys = true, keyProperty = "UserId")
     int insertUser(User user);
 

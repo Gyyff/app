@@ -12,6 +12,10 @@ public interface UserService  {
     User getUserByName(String UserName);
     User getUserByAge( int Age);
     User getUserByAddress(String Address);
+    boolean getUserCharaPro(int UserId);
+    boolean getUserInfoPro(int UserId);
+    int getUserMatchPro(int UserId);
+
     public List<Metrics> getUserMatch(int UserId);
     int insertUser(User user);
     int deleteUser( int UserId);

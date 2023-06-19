@@ -42,6 +42,20 @@ public class UserController {
         return userService.getUserMatch(UserId);
     }
 
+    @GetMapping("/getUserCharaPro/{UserId}")
+    public boolean getUserCharaPro(@PathVariable("UserId") int UserId){
+        return userService.getUserCharaPro(UserId);
+    }
+    @GetMapping("/getUserInfoPro/{UserId}")
+    public boolean getUserInfoPro(@PathVariable("UserId") int UserId){
+        return userService.getUserInfoPro(UserId);
+    }
+    @GetMapping("/getUserMatchPro/{UserId}")
+    public int getUserMatchPro(@PathVariable("UserId") int UserId){
+        return userService.getUserMatchPro(UserId);
+    }
+
+
     // 这里写更多的 getter 函数...
 
     @PostMapping("/insertUser")

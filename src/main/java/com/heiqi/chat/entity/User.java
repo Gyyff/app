@@ -18,5 +18,10 @@ public class User {
     private int Education;
     private int Sex;
     private int Beauty;
+    private int CharaPro; //性格测试状态
+    private int InfoPro; //资料审核状态
+    private int MatchPro; //性格测试状态
+
+
 
 }
