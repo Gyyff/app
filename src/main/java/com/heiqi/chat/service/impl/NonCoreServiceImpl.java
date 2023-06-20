@@ -81,15 +81,15 @@ public class NonCoreServiceImpl implements NonCoreService {
                                     //Challenge(安逸还是挑战)必须相等
                                     if (thisNonCore.getChallenge() == nonCore.getChallenge()) {
                                         //East(东西方文化偏好)必须相等
-                                        if (thisNonCore.getEast() == nonCore.getEast()) {
-                                            //Achieve(高成就和低成就需求)必须相等
-                                            if (thisNonCore.getAchieve() == nonCore.getAchieve()) {
-                                                //Respect(是否会尊重他人)必须相等
-                                                if (thisNonCore.getRespect() == nonCore.getRespect()) {
-                                                    //Confidence(自信心还是自我怀疑)必须相等
-                                                    if (thisNonCore.getConfidence() == nonCore.getConfidence()) {
-                                                        //Cure(治愈他人)必须相等
-                                                        if (thisNonCore.getCure() == nonCore.getCure()) {
+                                     if (thisNonCore.getEast() == nonCore.getEast()) {
+                                         //Achieve(高成就和低成就需求)必须相等
+                                         if (thisNonCore.getAchieve() == nonCore.getAchieve()) {
+                                             //Respect(是否会尊重他人)必须相等
+                                             if (thisNonCore.getRespect() == nonCore.getRespect()) {
+                                                 //Confidence(自信心还是自我怀疑)必须相等
+                                                 if (thisNonCore.getConfidence() == nonCore.getConfidence()) {
+                                                     //Cure(治愈他人)必须相等
+                                                     if (thisNonCore.getCure() == nonCore.getCure()) {
                                                             //MoralSense(道德感)必须相等
                                                             if (thisNonCore.getMoralSense() == nonCore.getMoralSense()) {
                                                                 //ResPonSiBiLiTy(责任心)必须相等
@@ -111,11 +111,11 @@ public class NonCoreServiceImpl implements NonCoreService {
                                                             }
                                                         }
                                                     }
-                                                }
                                             }
                                         }
                                     }
                                 }
+                            }
                             }
                         }
                     }
@@ -123,6 +123,9 @@ public class NonCoreServiceImpl implements NonCoreService {
             }
 
         });
+        System.out.println("非核心属性匹配开始...................................");
+        System.out.println("经过非核心属性匹配后，与该用户匹配的人数有:" + Success.size()+"人");
+        System.out.println("非核心属性匹配结束........................................");
         return Success;
     }
 }

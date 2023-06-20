@@ -19,9 +19,6 @@ public interface ValuesMapper {
     @Delete("DELETE FROM uservalues WHERE UserId = #{UserId}")
     int deleteValuesByUserId(@Param("UserId") int UserId);
 
-    //**
-    //  Todo 普通匹配入口！！***
-    // *//
     @Delete("DELETE FROM uservalues WHERE ValuesId = #{ValuesId}")
     int deleteValuesByValuesId(@Param("ValuesId") int ValuesId);
 

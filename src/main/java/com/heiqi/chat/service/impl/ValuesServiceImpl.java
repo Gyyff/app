@@ -55,6 +55,9 @@ public class ValuesServiceImpl implements ValuesService {
         return valuesMapper.deleteValuesByValuesId(ValuesId);
     }
 
+
+
+    //  Todo 灵魂伴侣匹配入口！！*************
     @Override
     public User getUserMatchSimple(int UserId) {
         //得到当前用户的Values对象
@@ -84,16 +87,20 @@ public class ValuesServiceImpl implements ValuesService {
                     //判断是否是最大的相似度
                     if (SaveLyMax[0] <= SaveLy) {
                         SaveLyMax[0] = SaveLy;
-                        System.out.println("SaveLy = " + SaveLy);
                         System.out.println("SaveLyMax = " + SaveLyMax[0]);
                         FriendUserID.set(friend.getUserID());
-                        System.out.println("FriendUserID = " + FriendUserID.get());
                     }
 
                 }
         );
         //转型成int类型的匹配成功的用户
         int SuccessUserID = FriendUserID.get();
+        //将双方匹配状态转换为匹配成功状态
+        userService.updateUserMatchStatus(SuccessUserID,2);
+        userService.updateUserMatchStatus(UserId,2);
+        System.out.println("用户核心价值观相似度匹配开始.....................................");
+        System.out.println("最终的出的相似度最高的人是" + SuccessUserID+"号用户，他们的相似度为"+SaveLyMax[0]);
+        System.out.println("价值观相似度匹配完成，匹配已结束...........................");
         return userService.getUserById(SuccessUserID);
     }
 

@@ -2,7 +2,7 @@ package com.heiqi.chat.service;
 
 import com.heiqi.chat.entity.Metrics;
 import com.heiqi.chat.entity.User;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -25,6 +25,11 @@ public interface UserService  {
     int updateUserIdentity( int UserId, String Identity);
     int updateUserEducation( int UserId, int Education);
     int updateUserPhoto(int UserId, String Photo);
+
+    int updateUserIsTested(@Param("UserId") int UserId, @Param("IsTested") int IsTested);
+    int updateUserIsAuthed(@Param("UserId") int UserId, @Param("IsAuthed") int IsAuthed);
+    int updateUserIsLogged(@Param("UserId") int UserId, @Param("IsLogged") int IsLogged);
+    int updateUserMatchStatus(@Param("UserId") int UserId, @Param("MatchStatus") int MatchStatus);
 
 
 }
