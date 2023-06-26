@@ -12,14 +12,9 @@ public interface NonCoreMapper {
     @Select("SELECT * FROM noncore WHERE UserID = #{UserID}")
     NonCore getNonCoreByUserID(@Param("UserID") int UserID);
 
-    @Insert("INSERT INTO noncore(NonCoreID, UserID, InAndEx, Confidence, MoralSense, Cure, Emotion, Risk, LeaderShip, ResPonSiBiLiTy, Respect,Reason,WillPower,AutoNoMy,Secular,Investment,Romantic,Challenge,Solitude,East,Achieve) VALUES(#{NonCoreID}, #{UserID}, #{InAndEx}, #{Confidence}, #{MoralSense}, #{Cure}, #{Emotion}, #{Risk}, #{LeaderShip}, #{ResPonSiBiLiTy}, #{Respect},#{Reason},#{WillPower},#{AutoNoMy},#{Secular},#{Investment},#{Romantic},#{Challenge},#{Solitude},#{East},#{Achieve})")
+    @Insert("INSERT INTO noncore(NonCoreID, UserID, InAndEx, Confidence, MoralSense, Cure, Emotion, Risk, LeaderShip, ResPonSiBiLiTy, Respect,Reason,WillPower,AutoNoMy,Romantic,Challenge,Solitude,East,Achieve,NewThings,Empathy,Aesthetic,Stimulate,Anxiety,SoAnxiety,Enthusiasm,Dynamism,Imagination,RichExperience,Frank,Organized,Purpose,Discipline,Rebel,Humorous,Attitude,Fairness) VALUES(#{NonCoreID}, #{UserID}, #{InAndEx}, #{Confidence}, #{MoralSense}, #{Cure}, #{Emotion}, #{Risk}, #{LeaderShip}, #{ResPonSiBiLiTy}, #{Respect},#{Reason},#{WillPower},#{AutoNoMy},#{Romantic},#{Challenge},#{Solitude},#{East},#{Achieve},#{NewThings},#{Empathy},#{Aesthetic},#{Stimulate},#{Anxiety},#{SoAnxiety},#{Enthusiasm},#{Dynamism},#{Imagination},#{RichExperience},#{Frank},#{Organized},#{Purpose},#{Discipline},#{Rebel},#{Humorous},#{Attitude},#{Fairness})")
     @Options(useGeneratedKeys = true, keyProperty = "NonCoreID")
     int insertNonCore(NonCore nonCore);
-
-    @Insert("INSERT INTO noncore_Text(NonCoreID, UserID, InAndEx, Confidence, MoralSense, Cure, Emotion, Risk, LeaderShip, ResPonSiBiLiTy, Respect,Reason,WillPower,AutoNoMy,Secular,Investment,Romantic,Challenge,Solitude,East,Achieve) VALUES(#{NonCoreID}, #{UserID}, #{InAndEx}, #{Confidence}, #{MoralSense}, #{Cure}, #{Emotion}, #{Risk}, #{LeaderShip}, #{ResPonSiBiLiTy}, #{Respect},#{Reason},#{WillPower},#{AutoNoMy},#{Secular},#{Investment},#{Romantic},#{Challenge},#{Solitude},#{East},#{Achieve})")
-    @Options(useGeneratedKeys = true, keyProperty = "NonCoreID")
-    int insertNonCoreText(NonCore nonCore);
-
 
 
 

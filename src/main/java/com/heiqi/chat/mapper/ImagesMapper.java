@@ -10,7 +10,7 @@ import java.util.List;
 public interface ImagesMapper {
 
     @Insert("INSERT INTO Images(BlogID, ImagePath) VALUES (#{blogID}, #{imagePath})")
-    int insertImages(Images images);
+    int upLoadImages(int blogId,String ImagePath);
 
     @Select("SELECT * FROM Images WHERE BlogID = #{blogID}")
     List<Images> getImagesByBlogID(int blogID);

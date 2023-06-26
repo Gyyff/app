@@ -37,7 +37,7 @@ public class NonCoreController {
 
     @PostMapping("/insertNonCore")
     public void insertNonCore(@RequestBody NonCore nonCore) {
-        nonCoreService.insertNonCoreText(nonCore);
+        nonCoreService.insertNonCore(nonCore);
 
     }
 

@@ -17,7 +17,5 @@ public interface NonCoreService {
 
     int deleteNonCoreByNonCoreID(int NonCoreID);
 
-    int insertNonCoreText(NonCore nonCore);
-
     List<NonCore> getSoulFriend(int UserID);
 }

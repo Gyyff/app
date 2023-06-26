@@ -16,6 +16,7 @@ public class Metrics {
     private int Openness;  // 开放性
     private int Curiosity;  // 好奇心和求知欲
     private int Abstraction;  // 抽象性
+    private int NewAThings;  // 尝新
     private int Intellect;  // 智力投入
     private int Idea;  // 理想主义程度
     private int Standard;  //顺从/独立 (是不是会屈服于社会压力)

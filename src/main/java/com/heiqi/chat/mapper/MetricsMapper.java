@@ -20,7 +20,7 @@ public interface MetricsMapper {
     @Update("UPDATE metrics SET ScoRel = #{ScoRel} WHERE MetricID = #{MetricID}")
     int insertScoRel(int MetricID,int ScoRel);
 
-    @Insert("INSERT INTO metrics(MetricID, UserID, MBTI, Principle, Knowledge, Openness, Curiosity, Abstraction, Intellect, Idea, Standard,Pet,Freedom,ChineseMed,Star,FS,ScoRel) VALUES(#{MetricID}, #{UserID}, #{MBTI}, #{Principle}, #{Knowledge}, #{Openness}, #{Curiosity}, #{Abstraction}, #{Intellect}, #{Idea}, #{Standard},#{Pet},#{Freedom},#{ChineseMed},#{Star},#{FS},#{ScoRel})")
+    @Insert("INSERT INTO metrics(MetricID, UserID, MBTI, Principle, Knowledge, Openness, Curiosity, Abstraction,NewAThings, Intellect, Idea, Standard,Pet,Freedom,ChineseMed,Star,FS,ScoRel) VALUES(#{MetricID}, #{UserID}, #{MBTI}, #{Principle}, #{Knowledge}, #{Openness}, #{Curiosity}, #{Abstraction},#{NewAThings}, #{Intellect}, #{Idea}, #{Standard},#{Pet},#{Freedom},#{ChineseMed},#{Star},#{FS},#{ScoRel})")
     @Options(useGeneratedKeys = true, keyProperty = "MetricID")
     int insertMetrics(Metrics metrics);
 
