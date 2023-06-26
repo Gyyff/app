@@ -170,10 +170,7 @@ public class UserServiceImp implements UserService {
         return userMapper.updateUserPhoto(UserId, Photo);
     }
 
-    @Override
-    public int updateUserIsTested(int UserId, int IsTested) {
-        return userMapper.updateUserIsTested(UserId, IsTested);
-    }
+
 
     @Override
     public int updateUserIsAuthed(int UserId, int IsAuthed) {
@@ -184,8 +181,20 @@ public class UserServiceImp implements UserService {
     public int updateUserIsLogged(int UserId, int IsLogged) {
         return userMapper.updateUserIsLogged(UserId, IsLogged);
     }
-
+    @Override
     public int updateUserMatchStatus(int UserId, int MatchStatus) {
         return userMapper.updateUserMatchStatus(UserId, MatchStatus);
     }
+
+    @Override
+    public int updateUserIsTestedCore(int UserId, int IsTestedCore) {
+        return userMapper.updateUserIsTestedCore(UserId,IsTestedCore);
+    }
+
+    @Override
+    public int updateUserIsTestedNoncore(int UserId, int IsTestedNoncore) {
+        return userMapper.updateUserIsTestedNoncore(UserId,IsTestedNoncore);
+    }
+
+
 }

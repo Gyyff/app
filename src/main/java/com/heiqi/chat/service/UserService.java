@@ -26,10 +26,14 @@ public interface UserService  {
     int updateUserEducation( int UserId, int Education);
     int updateUserPhoto(int UserId, String Photo);
 
-    int updateUserIsTested(@Param("UserId") int UserId, @Param("IsTested") int IsTested);
+
     int updateUserIsAuthed(@Param("UserId") int UserId, @Param("IsAuthed") int IsAuthed);
     int updateUserIsLogged(@Param("UserId") int UserId, @Param("IsLogged") int IsLogged);
     int updateUserMatchStatus(@Param("UserId") int UserId, @Param("MatchStatus") int MatchStatus);
+    int updateUserIsTestedCore(@Param("UserId") int UserId, @Param("IsTestedCore") int IsTestedCore);
+    int updateUserIsTestedNoncore(@Param("UserId") int UserId, @Param("IsTestedNoncore") int IsTestedNoncore);
+
+
 
 
 }

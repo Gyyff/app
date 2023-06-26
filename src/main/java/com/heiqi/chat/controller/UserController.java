@@ -99,8 +99,25 @@ public class UserController {
         userService.updateUserPhoto(UserId,Photo);
     }
 
+    @PutMapping("/updateUserIsAuthed/{UserId}")
+    public void updateUserIsAuthed(@PathVariable("UserId") int UserId,@RequestBody int IsAuthed){
+        userService.updateUserIsAuthed(UserId, IsAuthed);
+    }
 
+    @PutMapping("/updateUserIsLogged/{UserId}")
+    public void updateUserIsLogged(@PathVariable("UserId") int UserId,@RequestBody int IsLogged){
+        userService.updateUserIsLogged(UserId,IsLogged);
+    }
 
+    @PutMapping("/updateUserIsTestedCore/{UserId}")
+    public void updateUserIsTestedCore(@PathVariable("UserId") int UserId,@RequestBody int IsTestedCore){
+        userService.updateUserIsTestedCore(UserId,IsTestedCore);
+    }
+
+    @PutMapping("/updateUserIsTestedNoncore/{UserId}")
+    public void updateUserIsTestedNoncore(@PathVariable("UserId") int UserId,@RequestBody int IsTestedNoncore){
+        userService.updateUserIsTestedNoncore(UserId,IsTestedNoncore);
+    }
 
     // 这里写更多的 setter 函数...
 }

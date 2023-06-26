@@ -28,7 +28,7 @@ public interface UserMapper {
     @Select("SELECT MatchPro FROM user WHERE UserId = #{UserId}")
     int getUserMatchPro(@Param("UserId") int UserId);
 
-    @Insert("INSERT INTO user(UserId, UserName, PassWord, Photo, Identity, Gender, Age, Address, Height, Education, Sex,Beauty,IsTested,IsAuthed,IsLogged,MatchStatus) VALUES(#{UserId}, #{UserName}, #{PassWord}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex},#{Beauty},#{IsTested},#{IsAuthed},#{IsLogged},#{MatchStatus})")
+    @Insert("INSERT INTO user(UserId, UserName, wxId, Photo, Identity, Gender, Age, Address, Height, Education, Sex,Beauty,IsAuthed,IsLogged,MatchStatus,IsTestedCore,IsTestedNoncore) VALUES(#{UserId}, #{UserName}, #{wxId}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex},#{Beauty},#{IsAuthed},#{IsLogged},#{MatchStatus},#{IsTestedCore},#{IsTestedNoncore})")
     @Options(useGeneratedKeys = true, keyProperty = "UserId")
     int insertUser(User user);
 
@@ -53,9 +53,6 @@ public interface UserMapper {
     @Update("UPDATE user SET Photo = #{Photo} WHERE UserId = #{UserId}")
     int updateUserPhoto(@Param("UserId") int UserId, @Param("Photo") String Photo);
 
-    @Update("UPDATE user SET IsTested = #{IsTested} WHERE UserId = #{UserId}")
-    int updateUserIsTested(@Param("UserId") int UserId, @Param("IsTested") int IsTested);
-
     @Update("UPDATE user SET IsAuthed = #{IsAuthed} WHERE UserId = #{UserId}")
     int updateUserIsAuthed(@Param("UserId") int UserId, @Param("IsAuthed") int IsAuthed);
 
@@ -65,6 +62,10 @@ public interface UserMapper {
     @Update("UPDATE user SET MatchStatus = #{MatchStatus} WHERE UserId = #{UserId}")
     int updateUserMatchStatus(@Param("UserId") int UserId, @Param("MatchStatus") int MatchStatus);
 
+    @Update("UPDATE user SET IsTestedCore = #{IsTestedCore} WHERE UserId = #{UserId}")
+    int updateUserIsTestedCore(@Param("UserId") int UserId, @Param("IsTestedCore") int IsTestedCore);
 
+    @Update("UPDATE user SET IsTestedNoncore = #{IsTestedNoncore} WHERE UserId = #{UserId}")
+    int updateUserIsTestedNoncore(@Param("UserId") int UserId, @Param("IsTestedNoncore") int IsTestedNoncore);
 
 }
