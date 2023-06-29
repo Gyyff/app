@@ -28,6 +28,7 @@ public interface UserMapper {
     @Select("SELECT MatchPro FROM user WHERE UserId = #{UserId}")
     int getUserMatchPro(@Param("UserId") int UserId);
 
+
     @Insert("INSERT INTO user(UserId, UserName, wxId, Photo, Identity, Gender, Age, Address, Height, Education, Sex,Beauty,IsAuthed,IsLogged,MatchStatus,IsTestedCore,IsTestedNoncore) VALUES(#{UserId}, #{UserName}, #{wxId}, #{Photo}, #{Identity}, #{Gender}, #{Age}, #{Address}, #{Height}, #{Education}, #{Sex},#{Beauty},#{IsAuthed},#{IsLogged},#{MatchStatus},#{IsTestedCore},#{IsTestedNoncore})")
     @Options(useGeneratedKeys = true, keyProperty = "UserId")
     int insertUser(User user);
@@ -67,5 +68,7 @@ public interface UserMapper {
 
     @Update("UPDATE user SET IsTestedNoncore = #{IsTestedNoncore} WHERE UserId = #{UserId}")
     int updateUserIsTestedNoncore(@Param("UserId") int UserId, @Param("IsTestedNoncore") int IsTestedNoncore);
+
+
 
 }

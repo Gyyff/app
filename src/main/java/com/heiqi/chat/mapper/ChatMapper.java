@@ -17,7 +17,7 @@ public interface ChatMapper {
     @Select("SELECT * FROM chat WHERE ReceiverID = #{ReceiverID}")
     Chat getChatByReceiverID(@Param("ReceiverID") int ReceiverID);
 
-    @Insert("INSERT INTO chat(ChatID, SenderID, ReceiverID,Content,DateTime) VALUES(#{ChatID}, #{SenderID}, #{ReceiverID},#{Content},#{DateTime})")
+    @Insert("INSERT INTO chat(ChatID, SenderID, ReceiverID,Content,DateTime,Img) VALUES(#{ChatID}, #{SenderID}, #{ReceiverID},#{Content},#{DateTime},#{Img})")
     @Options(useGeneratedKeys = true, keyProperty = "ChatID")
     int insertChat(Chat chat);
 
