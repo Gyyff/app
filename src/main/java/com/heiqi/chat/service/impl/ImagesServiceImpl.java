@@ -24,13 +24,17 @@ public class ImagesServiceImpl implements ImagesService {
     }
 
     @Override
-    public int UploadImages(int UserId, String imagePath) {
-        int blogID = blogMapper.getBlogByUserID(UserId).getBlogID();
-        return imagesMapper.upLoadImages(blogID,imagePath);
+    public int insertImages(int blogID, String imagePath) {
+        return imagesMapper.insertImages(blogID,imagePath);
     }
 
     @Override
     public List<Images> getImagesByBlogID(int blogID) {
         return imagesMapper.getImagesByBlogID(blogID);
+    }
+
+    @Override
+    public Images getImagesByImagePath(String ImagePath) {
+        return imagesMapper.getImagesByImagePath(ImagePath);
     }
 }

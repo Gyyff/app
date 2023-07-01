@@ -5,7 +5,9 @@ import com.heiqi.chat.entity.Images;
 import java.util.List;
 
 public interface ImagesService {
-    int UploadImages(int UserId,String imagePath);
+    int insertImages(int blogID,String imagePath);
 
     List<Images> getImagesByBlogID(int blogID);
+
+    Images getImagesByImagePath(String ImagePath);
 }

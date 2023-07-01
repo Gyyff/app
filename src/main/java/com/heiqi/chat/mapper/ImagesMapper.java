@@ -9,9 +9,14 @@ import java.util.List;
 @Mapper
 public interface ImagesMapper {
 
-    @Insert("INSERT INTO Images(BlogID, ImagePath) VALUES (#{blogID}, #{imagePath})")
-    int upLoadImages(int blogId,String ImagePath);
+    @Insert("INSERT INTO images(BlogID, ImagePath) VALUES (#{BlogID}, #{ImagePath})")
+    int insertImages(int BlogID,String ImagePath);
 
-    @Select("SELECT * FROM Images WHERE BlogID = #{blogID}")
-    List<Images> getImagesByBlogID(int blogID);
+    @Select("SELECT * FROM images WHERE BlogID = #{BlogID}")
+    List<Images> getImagesByBlogID(int BlogID);
+
+    @Select("SELECT * FROM images WHERE ImagePath = #{ImagePath}")
+    Images getImagesByImagePath(String ImagePath);
+
+
 }

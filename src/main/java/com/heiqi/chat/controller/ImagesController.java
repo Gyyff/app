@@ -1,39 +1,39 @@
 package com.heiqi.chat.controller;
 
+import com.heiqi.chat.Utils.UploadUtil;
+import com.heiqi.chat.service.BlogService;
 import com.heiqi.chat.service.ImagesService;
+import com.heiqi.chat.service.UserPhotoService;
+import com.heiqi.chat.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.system.ApplicationHome;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/user/images")
 public class ImagesController {
     private final ImagesService imagesService;
+    private final UserPhotoService userPhotoService;
 
+    private final BlogService blogService;
     @Autowired
-    public ImagesController(ImagesService imagesService) {
+    public ImagesController(ImagesService imagesService, UserPhotoService userPhotoService,BlogService blogService) {
         this.imagesService = imagesService;
+        this.userPhotoService = userPhotoService;
+        this.blogService = blogService;
     }
 
-    @PostMapping("/imagesUpload/{UserId}")
-    public int ImagesUpload(@PathVariable("UserId") int UserId, @RequestParam("file") MultipartFile file) {
-        if (!file.isEmpty()) {
-            try {
-                // 这里只是简单示例，文件直接输出到项目路径下。
-                // 实际项目中，你可能会将文件保存在指定的路径，然后将文件的URL路径保存在数据库中。
-                String saveFileName = file.getOriginalFilename();
-                File saveFile = new File("C:\\Users\\耿奕飞\\Desktop" + saveFileName);
-                file.transferTo(saveFile);
-                return imagesService.UploadImages(UserId,saveFileName);
-            } catch (IOException e) {
-                e.printStackTrace();
-                return 0;
-            }
-        } else {
-            return 0;
-        }
+    @PostMapping("/upload/{UserId}")
+    public String upload(@PathVariable("UserId") int UserId, @RequestBody MultipartFile file) throws IOException {
+            String path = UploadUtil.uploadImage(file);
+        int blogID = blogService.findByUserID(UserId).getBlogID();
+        System.out.println("blogID = " + blogID);
+        imagesService.insertImages(blogID,path);
+            return path;
     }
 }
